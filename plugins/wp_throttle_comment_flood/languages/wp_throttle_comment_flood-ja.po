@@ -25,7 +25,7 @@ msgid "Throttle Comment Setting"
 msgstr "コメントスロットル設定"
 
 msgid "Throttle Comment Seconds:"
-msgstr "コメント抑止秒数"
+msgstr "コメント連続投稿抑止秒数"
 
 msgid "Update Options"
 msgstr "変更を保存"

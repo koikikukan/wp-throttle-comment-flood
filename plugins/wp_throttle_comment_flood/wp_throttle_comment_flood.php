@@ -9,7 +9,8 @@ Author URI: http://www.koikikukan.com/
 */
 
 function throttle_comment_flood($block, $time_lastcomment, $time_newcomment) {
-    if (($time_newcomment - $time_lastcomment) < 30) {
+    $opt_val = get_option( 'throttle_comment_flood' );
+    if (($time_newcomment - $time_lastcomment) < $opt_val) {
         return true;
     } else {
         return false;
@@ -30,6 +31,9 @@ function throttle_comment_flood_options() {
     $data_field_name = 'throttle_comment_flood';
 
     $opt_val = get_option( $opt_name );
+    if ($opt_val == '') {
+        $opt_val = 15;
+    }
 
     if( $_POST[ $hidden_field_name ] == 'Y' ) {
         $opt_val = $_POST[ $data_field_name ];
